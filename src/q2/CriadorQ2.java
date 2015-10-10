@@ -7,5 +7,6 @@ public class CriadorQ2 {
 	public static void main(String[] args) throws IOException {
 		CurvaGama criador = new CurvaGama();
 		criador.CriarCurvaUniforme();
+		criador.CriarCurvaAdaptativa();
 	}
 }
