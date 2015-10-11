@@ -25,18 +25,17 @@ public class CurvaImplicita {
 		//parametros
 		double x,y;
 		//F(x,y) = y^2 - x^3 + x 
-		int Fx;
 		
-		for (x = -2.0; x <= 2.0; x=x+0.001) {
-			for (y = -2.0; y <= 2.0; y=y+0.001) {
-				
-				Fx = (int)(y*y - x*x*x + x);
-				
-				if (Fx == 0) {
-					buffer.setRGB((int)(50*x+100), (int)(-50*y+100), Color.WHITE.getRGB());
+		
+		for (x = -2; x <= 2; x = x + 0.0001) {
+			
+				y = Math.sqrt(x*x*x-x);
+				if (y <= 2) {
+					buffer.setRGB((int)(x*50 + 100), (int)(y*-50 + 100), Color.WHITE.getRGB());
+					buffer.setRGB((int)(x*50 + 100), (int)(y*50 + 100), Color.WHITE.getRGB());
 				}
 
-			}
+			
 		}
 		
 		
