@@ -9,9 +9,9 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class RegiaoU {
-	public void CriarRegiaoU(double raio) throws IOException {
+	public void CriarRegiaoU() throws IOException {
 		// criar um buffer de imagem com tamanho 200x200
-		int width = 201, height = 201;
+		int width = 200, height = 200;
 		BufferedImage buffer = new BufferedImage(width, height,
 				BufferedImage.TYPE_INT_RGB);
 		Graphics g = buffer.createGraphics();

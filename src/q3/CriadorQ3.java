@@ -6,7 +6,7 @@ public class CriadorQ3 {
 
 	public static void main(String[] args) throws IOException {
 		RegiaoU criador = new RegiaoU();
-		criador.CriarRegiaoU(200);
+		criador.CriarRegiaoU();
 
 	}
 
