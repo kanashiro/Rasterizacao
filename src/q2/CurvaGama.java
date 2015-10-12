@@ -25,7 +25,7 @@ public class CurvaGama {
 				int x,y;
 				double t;
 				
-				for (t = 0.1;  t < 100; t=t+0.1) {
+				for (t = 0;  t < 100; t=t+0.1) {
 					x = (int) (t*Math.sin(t));
 					y = (int) (t*Math.cos(t));
 					buffer.setRGB(x + 100, y + 100, Color.WHITE.getRGB());

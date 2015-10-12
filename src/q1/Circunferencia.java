@@ -29,10 +29,10 @@ public class Circunferencia {
 		int x, y;
 
 		// descricao parametrica
-		for (teta = 0; teta < 360; teta++) {
-			x = (int) (raio * Math.sin(teta) + 100);
-			y = (int) (raio * Math.cos(teta) + 100);
-			buffer.setRGB(x, y, Color.WHITE.getRGB());
+		for (teta = 0; teta < 360; teta=teta+0.1) {
+			x = (int) (raio * Math.sin(teta)*100);
+			y = (int) (raio * Math.cos(teta)*100);
+			buffer.setRGB(x + 100, y+ 100, Color.WHITE.getRGB());
 		}
 
 		// salvar imagem
@@ -62,17 +62,13 @@ public class Circunferencia {
 		// descricao implicita
 		// F(x,y) = x²+y²-raio²
 		// F^(-1)(0) = circunferencia
-		for (x = -100.0; x < 101.0; x=x+0.1) {
-			for (y = -100.0; y < 101.0; y=y+0.1) {
-				
-				Fx = (int)(x * x + y * y - raio * raio);
-				
-				if (Fx == 0) {
-					buffer.setRGB((int)(x+100), (int)(y+100), Color.WHITE.getRGB());
+		for (x = -1.0; x <= 1.0; x=x+0.00001) {	
+			y = Math.sqrt(raio*raio - x*x);
+				if (y <= 1) {
+					buffer.setRGB((int)(x*100+100), (int)(y*100+100), Color.WHITE.getRGB());
+					buffer.setRGB((int)(x*100+100), (int)(-y*100+100), Color.WHITE.getRGB());
 				}
-
 			}
-		}
 
 		// salvar imagem
 		ImageIO.write(buffer, "JPG", new File(
